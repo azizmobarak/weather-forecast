@@ -2,8 +2,20 @@ import { useState } from 'react';
 import { httpService } from '../services/httpService';
 import { Alert } from 'react-native';
 
+export interface ForecastDataItems {
+  temperature: number;
+  weatherIcon: string;
+  humidity: number;
+  dt: string;
+}
+
+export interface GroupedForecastItems {
+  dayOfWeek: string;
+  details: ForecastDataItems[];
+}
+
 export const useForecastData = () => {
-  const [forecastData, setForecastData] = useState<any[]>([]);
+  const [forecastData, setForecastData] = useState<GroupedForecastItems[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const mapWeatherIcon = (weather: string) => {

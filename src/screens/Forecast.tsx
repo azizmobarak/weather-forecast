@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; // Example icon library
 import { useRoute, RouteProp } from '@react-navigation/native';
-import { useForecastData } from '../hooks/useForecastData';
+import { ForecastDataItems, GroupedForecastItems, useForecastData } from '../hooks/useForecastData';
 import DataNotFound from '../components/DataNotFound';
 import Button from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
@@ -27,13 +27,13 @@ const Forecast: React.FC = () => {
     return `${Math.round(temperature - 273.15)}°C`;
   };
 
-  const renderItem = ({ item }: any) => {
+  const renderItem = ({ item }: {item: GroupedForecastItems}) => {
     return (
       <View className="border-b border-gray-300 p-4">
         <Text className="font-bold text-lg text-black mb-2">
           {item.dayOfWeek}
         </Text>
-        {item.details.map((detail: any, index: number) => (
+        {item.details.map((detail: ForecastDataItems, index: number) => (
           <View key={index} className="flex-row items-center justify-between">
             <Text className="text-lg">{detail.dt}</Text>
             <Icon name={detail.weatherIcon} size={30} color="brown" />
