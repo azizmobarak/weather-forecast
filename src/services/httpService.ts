@@ -1,4 +1,4 @@
-export const API_KEY = '75520491154ee4f304a3143b4d46db23';
+export const API_KEY = process.env.TOKEN;
 export const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 class HttpService {
