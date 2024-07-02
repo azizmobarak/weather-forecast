@@ -28,7 +28,8 @@ export default function Home() {
     setSearch(city);
   }, [currentCity, city]);
 
-  const getDateTime = (dt: number) => new Date(dt * 1000).toLocaleDateString('en-US');
+  const getDateTime = (dt: number) =>
+    new Date(dt * 1000).toLocaleDateString('en-US');
 
   if (isLoading)
     return (
