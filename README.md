@@ -7,4 +7,4 @@ can also show forecast for a week on the current location or  any city typed by 
 `yarn start : will start the app (choose expo or dev build)`
 
 
-contributors: @azizmobarak
+contributors: @azizmobarak(https://github.com/azizmobarak)
