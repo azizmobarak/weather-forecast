@@ -11,4 +11,4 @@ start server (server dir): `yarn start:dev or npm run start:dev`
 
 change the `BASE_URL` with your IP address in local machine or the remote http URL for server
 
-change the API_KEY on server/.env file (use the free one provided for test, will be removed later)
+change the API_KEY on server/.env (create new .env file one and follow .env.example)
