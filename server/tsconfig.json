@@ -17,7 +17,8 @@
     ],
     "types": [
       "node",
-      "@nestjs/common"
+      "@nestjs/common",
+      "jest"
     ],
     "outDir": "./dist",
     "baseUrl": "./",
