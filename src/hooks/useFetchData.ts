@@ -19,7 +19,7 @@ export const useFetchData = () => {
     if (!city) return;
     try {
       setIsLoading(true);
-      const data = await httpService.get('weather', city, 'units=metric');
+      const data = await httpService.get('weather', city);
       setWeather(data);
     } catch (error) {
       Alert.alert('Network Error please try later or check your connection');

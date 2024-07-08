@@ -1,39 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-
-interface WeatherData {
-  name: string;
-  dt: number;
-  temp: number;
-  humidity: number;
-  description: string;
-  wind: number;
-}
-
-export interface ForecastDataItems {
-  temperature: number;
-  weatherIcon: string;
-  humidity: number;
-  dt: string;
-}
-
-export interface GroupedForecastItems {
-  dayOfWeek: string;
-  details: ForecastDataItems[];
-}
-
-const mapWeatherIcon = (weather: string) => {
-  switch (weather) {
-    case 'Clear':
-      return 'weather-sunny';
-    case 'Clouds':
-      return 'weather-cloudy';
-    case 'Rain':
-      return 'weather-rainy';
-    default:
-      return 'weather-partlycloudy';
-  }
-};
+import { WeatherData, GroupedForecastItems } from './types';
+import { mapWeatherIcon } from './helper';
 
 @Injectable()
 export class AppService {
@@ -52,11 +20,9 @@ export class AppService {
       `${this.getBaseUrl()}/weather?q=${city}&appid=${this.getApiKey()}`,
     );
     const data = await response.json();
-    console.log(data);
     if (data.cod === '404') {
       return null;
     }
-    console.log(data);
     return {
       name: data.name,
       dt: data.dt,

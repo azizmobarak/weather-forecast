@@ -19,11 +19,11 @@ export const useForecastData = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchForecastData = async (city: string) => {
-    setIsLoading(true);
     if (!city) return;
+    setIsLoading(true);
     try {
       setIsLoading(true);
-      const data = await httpService.get('forecast', city, 'units=metric');
+      const data = await httpService.get('forecast', city);
       if(!data){
         setForecastData([]);
       }else {
