@@ -62,25 +62,25 @@ export default function Home() {
           </Text>
           <View className="flex flex-row justify-around items-center w-full mb-2">
             <Text className="text-lg w-1/2">
-              Temperature: {weather.main.temp}°C
+              Temperature: {weather.temp}°C
             </Text>
             <Icons name="weather-sunny" size={40} color={'brown'} />
           </View>
           <View className="flex flex-row justify-around items-center w-full mb-2">
             <Text className="text-lg w-1/2">
-              Weather: {weather.weather[0].description}
+              Weather: {weather.description}
             </Text>
             <Icons name="weather-partly-cloudy" size={40} color={'brown'} />
           </View>
           <View className="flex flex-row justify-around items-center w-full mb-2">
             <Text className="text-lg w-1/2">
-              Humidity: {weather.main.humidity}%
+              Humidity: {weather.humidity}%
             </Text>
             <Icons name="water-outline" size={40} color={'brown'} />
           </View>
           <View className="flex flex-row justify-around items-center w-full mt-2">
             <Text className="text-lg w-1/2">
-              Wind Speed: {weather.wind.speed} m/s
+              Wind Speed: {weather.speed} m/s
             </Text>
             <Icons name="windsock" size={40} color={'brown'} />
           </View>

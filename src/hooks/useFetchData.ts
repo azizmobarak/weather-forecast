@@ -5,16 +5,10 @@ import { httpService } from '../services/httpService';
 interface WeatherData {
   name: string;
   dt: number;
-  main: {
-    temp: number;
-    humidity: number;
-  };
-  weather: {
-    description: string;
-  }[];
-  wind: {
-    speed: number;
-  };
+  temp: number;
+  humidity: number;
+  description: string;
+  speed: number;
 }
 
 export const useFetchData = () => {
